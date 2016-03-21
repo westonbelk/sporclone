@@ -39,7 +39,7 @@ function setup()
     document.getElementById('score').innerHTML = correct + "/" + total;
 
     // o. 
-    document.getElementById('time').innerHTML = time_remaining;
+    document.getElementById('time').innerHTML = formatTime(time_remaining);
 }
 
 
@@ -56,7 +56,7 @@ function start()
 
 
         // p. 
-
+        setInterval(tick, 1000);
     
         // q. 
 
@@ -74,7 +74,7 @@ function start()
 function tick()
 {
     // s. 
-    document.getElementById('time').innerHTML = time_remaining;
+    document.getElementById('time').innerHTML = formatTime(time_remaining);
 
     // t.
     if (time_remaining < 1)
@@ -83,6 +83,7 @@ function tick()
     }
 
     // u.
+    time_remaining = time_remaining - 1;
 
 
 }
