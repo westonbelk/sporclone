@@ -40,9 +40,25 @@ td {
 table span {
     /* applies only to span tags within table */
     border: 1px solid #AAAAAA;
-    display: inline-block;
-    height: 20px;
-    width: 200px;
+    display: block;
+
+    width: 98%;
+    height: 30px;
+    line-height: 30px;
+    
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+
+    color: white;
+}
+
+
+img {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 150px;
+    display: block;
 }
 </style>
 
@@ -50,10 +66,10 @@ table span {
 /*********** Game configuration ***********/
 
 // c.
-var answers = ["Envyus", "Natus Vincere", "Faze", "Ninjas in Pyjamas", "Fnatic", "Virtus.Pro", "Astralis", "Luminosity Gaming", "G2 eSports", "Mousesports", "Splyce", "Gambit Gaming", "Flipsid3 Tactics", "Team Liquid", "Counter Logic Gaming", "Cloud9"];
+var answers = ["Envyus|nV", "Natus Vincere|Navi", "Faze", "Ninjas in Pyjamas|NIP", "Fnatic", "Virtus Pro|VP", "Astralis", "Luminosity Gaming|Luminosity|LG", "G2 eSports|G2", "Mousesports|Mouz", "Splyce", "Gambit Gaming|Gambit", "Flipsid3 Tactics|F3|Flipside Tactics|Flipside|Flipsid3", "Team Liquid|Liquid", "Counter Logic Gaming|CLG", "Cloud9|C9"];
 
 // d.
-var time_limit = 90; // in seconds
+var time_limit = 15; // in seconds
 </script>
 
 
@@ -84,7 +100,7 @@ var time_limit = 90; // in seconds
         </aside>
         
         <!-- h. -->
-        <img class="icon" src="images/icon.png" alt="quiz logo">
+        <img class="icon" src="images/mlg.png" alt="quiz logo">
 
         <!-- i. -->
         <h2>Name the Counter-Strike teams invited to MLG Columbus.</h2>
@@ -103,7 +119,7 @@ var time_limit = 90; // in seconds
             <h3>Enter team name:</h3>
 
             <!-- l.  -->
-            <input id="guess" type="text">
+            <input id="guess" type="text" onkeyup="check()">
         </div>
 
         <div class="column">
@@ -125,56 +141,94 @@ var time_limit = 90; // in seconds
             <td>
                 <table>
                 <tr>
-                    <td><span id="answer0"></span></td>
+                    <th colspan=2>Legends</tr>
                 </tr>
                 <tr>
-                    <td><span id="answer1"></span></td>
+                    <td>
+                        <img src="images/nv.png">
+                        <span id="answer0">?</span>
+                    </td>
+                    <td>
+                        <img src="images/navi.png">
+                        <span id="answer1">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer2"></span></td>
+                    <td>
+                        <img src="images/faze.png">
+                        <span id="answer2">?</span>
+                    </td>
+                    <td>
+                        <img src="images/nip.png">
+                        <span id="answer3">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer3"></span></td>
+                    <td>
+                        <img src="images/fnatic.png">
+                        <span id="answer4">?</span>
+                    </td>
+                    <td>
+                        <img src="images/virtuspro.png">
+                        <span id="answer5">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer4"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer5"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer6"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer7"></span></td>
+                    <td>
+                        <img src="images/astralis.png">
+                        <span id="answer6">?</span>
+                    </td>
+                    <td>
+                        <img src="images/lg.png">
+                        <span id="answer7">?</span>
+                    </td>
                 </tr>
                 </table>
             </td>
             <td>
                 <table>
                 <tr>
-                    <td><span id="answer8"></span></td>
+                    <th colspan=2>Challengers</tr>
                 </tr>
                 <tr>
-                    <td><span id="answer9"></span></td>
+                    <td>
+                        <img src="images/g2.png">
+                        <span id="answer8">?</span>
+                    </td>
+                    <td>
+                        <img src="images/mousesports.png">
+                        <span id="answer9">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer10"></span></td>
+                    <td>
+                        <img src="images/splyce.png">
+                        <span id="answer10">?</span>
+                    </td>
+                    <td>
+                        <img src="images/gambit.png">
+                        <span id="answer11">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer11"></span></td>
+                    <td>
+                        <img src="images/flipside.png">
+                        <span id="answer12">?</span>
+                    </td>
+                    <td>
+                        <img src="images/teamliquid.png">
+                        <span id="answer13">?</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><span id="answer12"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer13"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer14"></span></td>
-                </tr>
-                <tr>
-                    <td><span id="answer15"></span></td>
+                    <td>
+                        <img src="images/clg.png">
+                        <span id="answer14">?</span>
+                    </td>
+                    <td>
+                        <img src="images/cloud9.png">
+                        <span id="answer15"><?/span>
+                    </td>
                 </tr>
                 </table>
             </td>

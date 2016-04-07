@@ -56,13 +56,13 @@ function start()
 
 
         // p. 
-        setInterval(tick, 1000);
+        timer = setInterval(tick, 1000);
     
         // q. 
-
+        document.getElementById('time').style.color = "green";
 
         // r. 
-
+        document.getElementById('guess').focus();
 
     }
 }
@@ -76,10 +76,15 @@ function tick()
     // s. 
     document.getElementById('time').innerHTML = formatTime(time_remaining);
 
+    console.log(time_remaining);
     // t.
     if (time_remaining < 1)
     {
         end();
+    }
+    else if(time_remaining <= 10)
+    {
+        document.getElementById('time').style.color = "orange";
     }
 
     // u.
@@ -112,16 +117,18 @@ function check()
                     if (isAlphanumericMatch(acceptable[j], guess))
                     {
                         var id = 'answer' + i;
-    
+
                         document.getElementById(id).innerHTML = preferred;
+                        document.getElementById(id).style.color = "green";
                         document.getElementById('guess').value = "";
         
                         is_guessed[i] = true;
         
                         // v.
 
-        
+                        correct = correct + 1;
                         // w. 
+                        document.getElementById('score').innerHTML = correct + "/" + total;
 
     
                     }
@@ -142,25 +149,29 @@ function check()
  */
 function end()
 {
+    playing = false;
     clearInterval(timer);
 
     // x.
-
+    document.getElementById('time').style.color = "red";
 
     for (var i=0; i<is_guessed.length; i++)
     {
         var id = 'answer' + i;
 
-        document.getElementById(id).innerHTML = answers[i];
+        
+        var acceptable = answers[i].split('|');
+        var preferred = acceptable[0];
+        document.getElementById(id).innerHTML = preferred;
 
         // y.
         if (is_guessed[i]==true)
         {
-
+            document.getElementById(id).style.color = "green";
         }
         else
         {
-
+            document.getElementById(id).style.backgroundColor= "red";
         }
 
     }
@@ -199,7 +210,13 @@ function convertToAlphanumericLowerCase(str)
     str = str.replace(/[^a-zA-Z0-9]+/g, '');
 
     // z.
-
+    str = str.toLowerCase();
 
     return str;
+}
+
+function isAlphanumericMatch(str1, str2) {
+    str1 = convertToAlphanumericLowerCase(str1);
+    str2 = convertToAlphanumericLowerCase(str2);
+    return str1 == str2;
 }
