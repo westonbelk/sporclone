@@ -47,7 +47,7 @@ table span {
     line-height: 30px;
     
     margin: 0 auto;
-    padding: 0;
+    padding: 1px;
     text-align: center;
 
     color: white;
@@ -57,7 +57,7 @@ table span {
 img {
     margin: 0 auto;
     padding: 0;
-    max-width: 150px;
+    max-width: 100px;
     display: block;
 }
 </style>
@@ -66,10 +66,10 @@ img {
 /*********** Game configuration ***********/
 
 // c.
-var answers = ["Envyus|nV", "Natus Vincere|Navi", "Faze", "Ninjas in Pyjamas|NIP", "Fnatic", "Virtus Pro|VP", "Astralis", "Luminosity Gaming|Luminosity|LG", "G2 eSports|G2", "Mousesports|Mouz", "Splyce", "Gambit Gaming|Gambit", "Flipsid3 Tactics|F3|Flipside Tactics|Flipside|Flipsid3", "Team Liquid|Liquid", "Counter Logic Gaming|CLG", "Cloud9|C9"];
+var answers = ["Envyus|nV", "Natus Vincere|Navi", "Faze", "Ninjas in Pyjamas|NIP", "Fnatic", "Virtus Pro|VP", "Astralis", "Luminosity|LG", "G2 eSports|G2", "Mousesports|Mouz", "Splyce", "Gambit Gaming|Gambit", "Flipsid3|F3|Flipside", "Team Liquid|Liquid", "CLG|Counter Logic Gaming", "Cloud9|C9"];
 
 // d.
-var time_limit = 15; // in seconds
+var time_limit = 45; // in seconds
 </script>
 
 
@@ -141,7 +141,7 @@ var time_limit = 15; // in seconds
             <td>
                 <table>
                 <tr>
-                    <th colspan=2>Legends</tr>
+                    <th colspan=4>Legends</tr>
                 </tr>
                 <tr>
                     <td>
@@ -152,8 +152,6 @@ var time_limit = 15; // in seconds
                         <img src="images/navi.png">
                         <span id="answer1">?</span>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <img src="images/faze.png">
                         <span id="answer2">?</span>
@@ -172,8 +170,6 @@ var time_limit = 15; // in seconds
                         <img src="images/virtuspro.png">
                         <span id="answer5">?</span>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <img src="images/astralis.png">
                         <span id="answer6">?</span>
@@ -188,7 +184,7 @@ var time_limit = 15; // in seconds
             <td>
                 <table>
                 <tr>
-                    <th colspan=2>Challengers</tr>
+                    <th colspan=4>Challengers</tr>
                 </tr>
                 <tr>
                     <td>
@@ -199,8 +195,6 @@ var time_limit = 15; // in seconds
                         <img src="images/mousesports.png">
                         <span id="answer9">?</span>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <img src="images/splyce.png">
                         <span id="answer10">?</span>
@@ -219,8 +213,6 @@ var time_limit = 15; // in seconds
                         <img src="images/teamliquid.png">
                         <span id="answer13">?</span>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <img src="images/clg.png">
                         <span id="answer14">?</span>
