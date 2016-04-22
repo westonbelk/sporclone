@@ -22,11 +22,10 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
 <!-- You may optionally style the table in your answers section here. -->
 <style>
 table {
-
+    width: 100%;
 }
 
 tr {
-
 }
 
 th {
@@ -34,7 +33,7 @@ th {
 }
 
 td {
-
+    width: 20%;
 }
 
 table span {
@@ -48,7 +47,6 @@ table span {
     
     margin: 0 auto;
     padding: 2px;
-    font-size: 30px;
     text-align: center;
 
     color: white;
@@ -67,10 +65,10 @@ img {
 /*********** Game configuration ***********/
 
 // c.
-var answers = ["Bill Gates", "Vladimir Putin", "Amancio Ortega", "Warren Buffett", "Mark Zuckerberg", "Jeff Bezos", "Carlos Slim Helu", "Ingvar Kamprad", "David Koch", "Charles Koch"];
+var answers = ["1. Bill Gates|Bill Gates", "2. Vladimir Putin|Vladimir Putin", "3. Amancio Ortega|Amancio Ortega", "4. Warren Buffett|Warren Buffett", "5. Mark Zuckerberg|Mark Zuckerberg", "6. Jeff Bezos|Jeff Bezos", "7. Carlos Slim Helu|Carlos Slim Helu", "8. Ingvar Kamprad|Ingvar Kamprad", "9. David Koch|David Koch", "10. Charles Koch|Charles Koch"];
 
 // d.
-var time_limit = 45; // in seconds
+var time_limit = 120; // in seconds
 </script>
 
 
@@ -101,7 +99,7 @@ var time_limit = 45; // in seconds
         </aside>
         
         <!-- h. -->
-        <img class="icon" src="alphabet_images/alphabet_logo.png" alt="quiz logo">
+        <img class="icon" src="networth_images/icon.png" alt="quiz logo">
 
         <!-- i. -->
         <h2>Name the 10 richest people as of 2016/4/18.</h2>
@@ -117,7 +115,7 @@ var time_limit = 45; // in seconds
 
         <div class="column">
             <!-- k. -->
-            <h3>Enter a letter:</h3>
+            <h3>Enter a name:</h3>
 
             <!-- l.  -->
             <input id="guess" type="text" onkeyup="check()">
@@ -157,6 +155,8 @@ var time_limit = 45; // in seconds
                     <td>
                         <span id="answer4">?</span>
                     </td>
+                </tr>
+                <tr>
                     <td>
                         <span id="answer5">?</span>
                     </td>
